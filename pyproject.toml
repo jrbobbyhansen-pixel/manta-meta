@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "manta"
+version = "1.0.0"
+description = "Manta CLI — unified interface for all Manta tools with pipe chain support"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+
+# pip-installable tools (main branch)
+dependencies = [
+    "manta-hash @ git+https://github.com/jrbobbyhansen-pixel/hash.git",
+    "manta-todo @ git+https://github.com/jrbobbyhansen-pixel/todo.git",
+    "manta-json @ git+https://github.com/jrbobbyhansen-pixel/json.git",
+    "manta-port @ git+https://github.com/jrbobbyhansen-pixel/port.git",
+    "manta-cert @ git+https://github.com/jrbobbyhansen-pixel/cert.git",
+    "rename @ git+https://github.com/jrbobbyhansen-pixel/rename.git",
+    "backup @ git+https://github.com/jrbobbyhansen-pixel/backup.git",
+    "env @ git+https://github.com/jrbobbyhansen-pixel/env.git",
+    "url @ git+https://github.com/jrbobbyhansen-pixel/url.git",
+]
+
+[project.scripts]
+manta = "manta:cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
